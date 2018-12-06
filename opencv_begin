@@ -69,3 +69,65 @@ Run OpenCV and your vision apps on an iDevice
 OpenCV Viz
 
 These tutorials show how to use Viz module effectively.
+Enumerations
+enum  	cv::MorphShapes { 
+  cv::MORPH_RECT = 0, 
+  cv::MORPH_CROSS = 1, 
+  cv::MORPH_ELLIPSE = 2 
+}
+ 	shape of the structuring element More...
+ 
+enum  	cv::MorphTypes { 
+  cv::MORPH_ERODE = 0, 
+  cv::MORPH_DILATE = 1, 
+  cv::MORPH_OPEN = 2, 
+  cv::MORPH_CLOSE = 3, 
+  cv::MORPH_GRADIENT = 4, 
+  cv::MORPH_TOPHAT = 5, 
+  cv::MORPH_BLACKHAT = 6, 
+  cv::MORPH_HITMISS = 7 
+}
+ 	type of morphological operation More...
+ 
+Functions
+void 	cv::bilateralFilter (InputArray src, OutputArray dst, int d, double sigmaColor, double sigmaSpace, int borderType=BORDER_DEFAULT)
+ 	Applies the bilateral filter to an image. More...
+ 
+void 	cv::blur (InputArray src, OutputArray dst, Size ksize, Point anchor=Point(-1,-1), int borderType=BORDER_DEFAULT)
+ 	Blurs an image using the normalized box filter. More...
+ 
+void 	cv::boxFilter (InputArray src, OutputArray dst, int ddepth, Size ksize, Point anchor=Point(-1,-1), bool normalize=true, int borderType=BORDER_DEFAULT)
+ 	Blurs an image using the box filter. More...
+ 
+void 	cv::buildPyramid (InputArray src, OutputArrayOfArrays dst, int maxlevel, int borderType=BORDER_DEFAULT)
+ 	Constructs the Gaussian pyramid for an image. More...
+ 
+void 	cv::dilate (InputArray src, OutputArray dst, InputArray kernel, Point anchor=Point(-1,-1), int iterations=1, int borderType=BORDER_CONSTANT, const Scalar &borderValue=morphologyDefaultBorderValue())
+ 	Dilates an image by using a specific structuring element. More...
+ 
+void 	cv::erode (InputArray src, OutputArray dst, InputArray kernel, Point anchor=Point(-1,-1), int iterations=1, int borderType=BORDER_CONSTANT, const Scalar &borderValue=morphologyDefaultBorderValue())
+ 	Erodes an image by using a specific structuring element. More...
+ 
+void 	cv::filter2D (InputArray src, OutputArray dst, int ddepth, InputArray kernel, Point anchor=Point(-1,-1), double delta=0, int borderType=BORDER_DEFAULT)
+ 	Convolves an image with the kernel. More...
+ 
+void 	cv::GaussianBlur (InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER_DEFAULT)
+ 	Blurs an image using a Gaussian filter. More...
+ 
+void 	cv::getDerivKernels (OutputArray kx, OutputArray ky, int dx, int dy, int ksize, bool normalize=false, int ktype=CV_32F)
+ 	Returns filter coefficients for computing spatial image derivatives. More...
+ 
+Mat 	cv::getGaborKernel (Size ksize, double sigma, double theta, double lambd, double gamma, double psi=CV_PI *0.5, int ktype=CV_64F)
+ 	Returns Gabor filter coefficients. More...
+ 
+Mat 	cv::getGaussianKernel (int ksize, double sigma, int ktype=CV_64F)
+ 	Returns Gaussian filter coefficients. More...
+ 
+Mat 	cv::getStructuringElement (int shape, Size ksize, Point anchor=Point(-1,-1))
+ 	Returns a structuring element of the specified size and shape for morphological operations. More...
+ 
+void 	cv::Laplacian (InputArray src, OutputArray dst, int ddepth, int ksize=1, double scale=1, double delta=0, int borderType=BORDER_DEFAULT)
+ 	Calculates the Laplacian of an image. More...
+ 
+void 	cv::medianBlur (InputArray src, OutputArray dst, int ksize)
+ 	Blurs an image using the median filter. More...
